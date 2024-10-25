@@ -1,0 +1,48 @@
+xrun: 23.09-s001: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s001: Started on Jun 29, 2024 at 07:53:32 +07
+xrun
+	BUFFER.v
+	CONTROLLER_SOFT_MAX.v
+	CONTROL.v
+	CONV_parameterized.v
+	FC_CONTROL.v
+	FC_test.v
+	FIFO_ASYNCH_END.v
+	FIFO_ASYNCH_SOFTMAX.v
+	FIFO_ASYNCH.v
+	IFM_BUFF.v
+	LUT.v
+	MUX_100_1.v
+	MUX_10_TO_1.v
+	PE_SOFT_MAX.v
+	PE.v
+	POOL_BUFFER.v
+	POOL_CONTROL.v
+	POOL_parameterized.v
+	qmult.v
+	RAM.v
+	REG_CONTROL.v
+	REGISTER_SOFTMAX.v
+	REG_SOFTMAX.v
+	REG_WRITE_CONTROL.v
+	SOFTMAX_TOP.v
+	SUBTRACT.v
+	testbench.v
+	TOP.v
+	WEIGHT_BUFF.v
+	WRITE_DATA_SOFTMAX.v
+	WRITE_DATA.v
+	-access +rwc
+Loading snapshot worklib.MUX_100_TO_1:v .................... Done
+xcelium> source /home/edabk/cadence/installs/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> run
+Computing layer 1
+Computing layer 2
+Computing layer 3
+Computing layer 4
+Computing layer 5
+Computing FC
+Simulation complete via $finish(1) at time 122745140 NS + 0
+./testbench.v:525         $finish();
+xcelium> exit
+TOOL:	xrun	23.09-s001: Exiting on Jun 29, 2024 at 07:54:14 +07  (total: 00:00:42)
