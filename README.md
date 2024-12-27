@@ -118,6 +118,10 @@ First, I will conduct testing on the accuracy of the convolution computation IP.
 - Fig 6 show the number of DRAM access in WS dataflow: 
 ![MAC](https://github.com/user-attachments/assets/a44ffe45-da3b-447a-8497-6d50368d3433)
 
+Finally, the DRAM access speed per MAC is **0.0844**
+access/MAC measured on the **AlexNet** network and **0.111**
+access/MAC on the **VGG-16** network.
+
 -The design, training, and extraction of post-training param-
 eters for the network were carried out on Google Colab with
 GPU support (Tesla T4), using the PyTorch library, and all
