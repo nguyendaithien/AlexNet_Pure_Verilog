@@ -1,5 +1,7 @@
 # FRAMEWORK FOR CONVOLUTION NEURAL NETWORKS
-This is my Thesis 
+Author: 
+  **Nguyen Van Luu** - nluu1784@gmail.com
+  **Dao Dong Hung** - thanjacodai2@gmail.com
 # INTRODUCTION
 <span style="font-size: 120 px;">**Overview:**</span>
 Convolutional Neural Networks (CNNs) are vital
