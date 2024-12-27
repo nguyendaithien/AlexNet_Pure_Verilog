@@ -1,6 +1,6 @@
-# AlexNet_Pure_Verilog
+# FRAMEWORK FOR CONVOLUTION NEURAL NETWORKS
 This is my Thesis 
-
+# INTRODUCTION
 <span style="font-size: 120 px;">**Overview:**</span>
 Convolutional Neural Networks (CNNs) are vital
 in artificial intelligence and machine learning, especially for
