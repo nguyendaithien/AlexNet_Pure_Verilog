@@ -17,20 +17,20 @@ balancing speed, power consumption, and resource usage.
 In this research, the design and implementation of a computation
 unit for CNNs include a convolutional accelerator, max-pooling
 layer, fully connected layers, and a softmax activation function.
-This study utilizes a data flow called weight stationary (WS) to
+This study utilizes a data flow called **weight stationary** (WS) to
 minimize data movement and reuse partial sums based on spatial
 architecture with an array of processing elements. Specifically,
 a softmax activation function is implemented using a Look-Up
 Table (LUT) technique to construct a complete AlexNet (batch
 size N = 1) for the handwritten digit recognition task using
 the MNIST dataset and fixed-point representation for data. The
-system achieves an accuracy of 98% in software and 95% after
+system achieves an accuracy of **98%** in software and **95%** after
 hardware simulation. This system processes the convolutional
-layers at a rate of 33.5 frames per second, with DRAM access
-per multiply-and-accumulate (MAC) operation being 0.0844 for
-the AlexNet model and 0.111 for the VGG-16 model (batch size
+layers at a rate of **33.5** frames per second, with DRAM access
+per multiply-and-accumulate (MAC) operation being **0.0844** for
+the AlexNet model and **0.111** for the VGG-16 model (batch size
 N=1), while the total power consumption of the entire network
-is 4.87 W.
+is **4.87** W.
 
 <span style="font-size: 120 px;">** Key Features**</span>  
 (1) A data flow called weight stationary base on spartial
