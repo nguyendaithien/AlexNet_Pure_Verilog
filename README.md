@@ -123,12 +123,12 @@ First, I will conduct testing on the accuracy of the convolution computation IP.
 *                 Fig 7: The testing environment for each convolution layer.*
 
 ![Alexnet](https://github.com/user-attachments/assets/217ba784-ff45-45c2-9401-352cfee7cb0e)
-*                 Fig 7: Model fine-tunning base on AlecNet in hardware.*
+*                 Fig 8: Model fine-tunning base on AlecNet in hardware.*
 
 
 
 ![verifi_model](https://github.com/user-attachments/assets/d76b1c0c-1592-45c4-910b-5bddeb4863c8)
-*                 Fig 7: The testing environment for all network with 1000 image, batch size = 1.*
+*                 Fig 9: The testing environment for all network with 1000 image, batch size = 1.*
 
 <span style="font-size: 150 px;">**Fix-Point Representation**</span>
 -To deploy a neural network model onto hardware, all
@@ -149,10 +149,13 @@ bits are required for the integer part.
 ![table_3](https://github.com/user-attachments/assets/441e360e-b0e2-45f7-b7b4-18a0e760c07f)
 
 # RESULT
-- Fig  show the mumber of MAC in ALexNet and VGG-16 model.
+
 ![MAC_in_model (1)](https://github.com/user-attachments/assets/70d48d3d-e340-43c6-8b00-2aabae3da2a9)
-- Fig 6 show the number of DRAM access in WS dataflow: 
+
+*           Fig 10: show the number DRAM access per MAC*
 ![MAC](https://github.com/user-attachments/assets/a44ffe45-da3b-447a-8497-6d50368d3433)
+
+*           Fig 10: show the number of DRAM access in WS dataflow*
 
 Finally, the DRAM access speed per MAC is **0.0844**
 access/MAC measured on the **AlexNet** network and **0.111**
