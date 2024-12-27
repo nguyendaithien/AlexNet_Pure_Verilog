@@ -1,7 +1,15 @@
 # FRAMEWORK FOR CONVOLUTION NEURAL NETWORKS
 Author: 
+
   **Nguyen Van Luu** - nluu1784@gmail.com
+  
   **Dao Dong Hung** - thanjacodai2@gmail.com
+
+  Name of Institute: **School of Electrical and Electronic Engineering (SEEE)-HUST**    
+
+  Language: **Verilog, Python**
+  Framework: **Keras, Pytorch**
+  Tools: **Cadence Xcelium and Genus**
 # INTRODUCTION
 <span style="font-size: 120 px;">**Overview:**</span>
 Convolutional Neural Networks (CNNs) are vital
