@@ -129,7 +129,6 @@ First, I will conduct testing on the accuracy of the convolution computation IP.
 <span style="font-size: 120 px;">**Environment Expiment:**</span>
 ![verifi_conv](https://github.com/user-attachments/assets/ac779e13-32f7-4d1d-94d7-45930c6ffcae)
 
-![verifi_model](https://github.com/user-attachments/assets/d76b1c0c-1592-45c4-910b-5bddeb4863c8)
 *                 Fig 7: The testing environment for each convolution layer.*
 
 ![Alexnet](https://github.com/user-attachments/assets/217ba784-ff45-45c2-9401-352cfee7cb0e)
