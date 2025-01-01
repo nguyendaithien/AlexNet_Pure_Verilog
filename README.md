@@ -72,10 +72,13 @@ The software and hardware components are connected through a feedback loop for i
 - Figure 2 illustrates the block diagram of the architecture and memory hierarchy of the convolutional accelerator, which includes a PE array, global buffer, controller block and ReLU activation function. This block is responsible for convolution operations, max pooling, ReLU, and fully connected layers. The weights, biases, and input feature maps are stored in off-chip DRAM and are read into the accelerator via buffers to reduce latency when accessing off-chip memory. The memory hierarchy consists of three types: off-chip DRAM, a global buffer (FIFO buffer), and registers within each PE. Each PE in the PE array is responsible for computing a convolution operation or max-pooling and accumulating the result through the internal PE register and a global buffer. The FIFO buffer is closely associated with the PE array in rows.
 The accelerator is controlled by finite state machine (FSM) in controller block.
 
-<img src = "https://github.com/user-attachments/assets/a7e5367d-7715-4ac7-9faf-83966dfac30a" alt = "tool" width = "600"/>
+![CONV_1](https://github.com/user-attachments/assets/30b97f7c-ec1f-4567-9779-4bcf22be15b3)
 
-*                         Figure 2: System architecture overview..*
+*                         Figure 2: System architecture overview.*
 
+For example, in case the size of the kernel matrix is ​​3x3, a PE set of 9 elements will be used.
+![CONV_ar](https://github.com/user-attachments/assets/8b2937d9-5461-44eb-9168-bde3ee193076)
+  *                         Figure 3: Convolutional architecture hardware implementation for configurable PE array size.*
 
 <span style="font-size: 120 px;">**Pipeline**</span>
 - For example, in cycle n, one IFM is loaded into the process-
@@ -89,7 +92,7 @@ sums are progressively completed in the order of the IFM’s
 processing sequence. 2-D convolutional operator with pipeline computing: completion level of each partial sum per cycle, the colored cells represent partial sums, where partial sums with the same color share the same completion level.
 ![1-D conv](https://github.com/user-attachments/assets/f5c941d3-c1d0-4d33-99d3-0668bfecdfde)
 
-*            Figure 3: 2-D convolutional operator with pipeline computing: completion level of each partial sum per cycle, the colored cells represent partial sums, where
+*            Figure 4: 2-D convolutional operator with pipeline computing: completion level of each partial sum per cycle, the colored cells represent partial sums, where
 partial sums with the same color share the same completion level.*
 
 <span style="font-size: 150 px;">**Fully Connected layer:**</span>
@@ -97,7 +100,7 @@ partial sums with the same color share the same completion level.*
 
 ![FC_architec](https://github.com/user-attachments/assets/239cef6b-e5cf-46d0-aac9-83b198388653)
 
-*                         Figure 4: Architecture of Fully connected layer.*
+*                         Figure 5: Architecture of Fully connected layer.*
 
 
 
@@ -108,7 +111,7 @@ of the CNN. The function is given by the formula 3, which
 shows that the highest computational cost in the hardware.
 ![soft_max](https://github.com/user-attachments/assets/58bf6932-571a-4295-8760-15621ff1009e)
 
-*                         Figure 5: Overall structure of Softmax function.*
+*                         Figure 6: Overall structure of Softmax function.*
 -Because of normalization, the input data for the softmax layer in the DNN is generally not too large. In this study’s model, the
 input data range is [-5, 5], and the total number of input data
 points is 81,920. As described on the table II, the hardware
@@ -119,7 +122,7 @@ calculations does not exceed 4.5 ×10−6, and the relative error
 does not exceed 0.88%.
 ![softmax](https://github.com/user-attachments/assets/2d255129-2d6e-478e-86f2-cf967aa7fb24)
 
-*                         Figure 6: Overall structure of Softmax function.*
+*                         Figure 7: Overall structure of Softmax function.*
 
 # EXPERIMENTAL SETUP
 First, I will conduct testing on the accuracy of the convolution computation IP. Specifically, the environment is described in Figure 5.1, where the inputs to the DUT (Design Under Test) and the weights are randomly generated through a Python script. These inputs will be convolved based on the PyTorch framework, and the output of this process will be used as the reference value for comparison with the DUT's output. The random inputs from the script will be fed into the DUT to obtain the results, which will then be compared with the reference values from the script. This is the testing scenario for the convolution IP
@@ -129,15 +132,15 @@ First, I will conduct testing on the accuracy of the convolution computation IP.
 <span style="font-size: 120 px;">**Environment Expiment:**</span>
 ![verifi_conv](https://github.com/user-attachments/assets/ac779e13-32f7-4d1d-94d7-45930c6ffcae)
 
-*                 Fig 7: The testing environment for each convolution layer.*
+*                 Fig 8: The testing environment for each convolution layer.*
 
 ![Alexnet](https://github.com/user-attachments/assets/217ba784-ff45-45c2-9401-352cfee7cb0e)
-*                 Fig 8: Model fine-tunning base on AlecNet in hardware.*
+*                 Fig 9: Model fine-tunning base on AlecNet in hardware.*
 
 
 
 ![verifi_model](https://github.com/user-attachments/assets/d76b1c0c-1592-45c4-910b-5bddeb4863c8)
-*                 Fig 9: The testing environment for all network with 1000 image, batch size = 1.*
+*                 Fig 10: The testing environment for all network with 1000 image, batch size = 1.*
 
 <span style="font-size: 150 px;">**Fix-Point Representation**</span>
 -To deploy a neural network model onto hardware, all
@@ -161,10 +164,10 @@ bits are required for the integer part.
 
 ![MAC_in_model (1)](https://github.com/user-attachments/assets/70d48d3d-e340-43c6-8b00-2aabae3da2a9)
 
-*           Fig 10: show the number DRAM access per MAC*
+*           Fig 11: show the number DRAM access per MAC*
 ![MAC](https://github.com/user-attachments/assets/a44ffe45-da3b-447a-8497-6d50368d3433)
 
-*           Fig 10: show the number of DRAM access in WS dataflow*
+*           Fig 12: show the number of DRAM access in WS dataflow*
 
 Finally, the DRAM access speed per MAC is **0.0844**
 access/MAC measured on the **AlexNet** network and **0.111**
